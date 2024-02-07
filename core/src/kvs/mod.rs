@@ -20,6 +20,7 @@ mod kv;
 mod mem;
 mod rocksdb;
 mod speedb;
+mod surrealkv;
 mod tikv;
 mod tx;
 
@@ -31,7 +32,8 @@ mod clock;
 	feature = "kv-speedb",
 	feature = "kv-indxdb",
 	feature = "kv-tikv",
-	feature = "kv-fdb"
+	feature = "kv-fdb",
+	feature = "kv-surrealkv"
 ))]
 mod tests;
 
