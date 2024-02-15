@@ -351,7 +351,7 @@ impl Number {
 	pub fn sin(self) -> Self {
 		self.to_float().sin().into()
 	}
-	
+
 	pub fn ceil(self) -> Self {
 		match self {
 			Number::Int(v) => v.into(),
