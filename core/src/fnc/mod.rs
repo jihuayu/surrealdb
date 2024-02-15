@@ -191,6 +191,9 @@ pub fn synchronous(ctx: &Context<'_>, name: &str, args: Vec<Value>) -> Result<Va
 		"math::top" => math::top,
 		"math::trimean" => math::trimean,
 		"math::variance" => math::variance,
+		"math::sin" => math::sin,
+		"math::cos" => math::cos,
+
 		//
 		"meta::id" => meta::id,
 		"meta::table" => meta::tb,

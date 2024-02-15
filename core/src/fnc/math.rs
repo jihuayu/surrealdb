@@ -143,3 +143,11 @@ pub fn trimean((mut array,): (Vec<Number>,)) -> Result<Value, Error> {
 pub fn variance((array,): (Vec<Number>,)) -> Result<Value, Error> {
 	Ok(array.variance(true).into())
 }
+
+pub fn cos((arg,): (Number,)) -> Result<Value, Error> {
+	Ok(arg.cos().into())
+}
+
+pub fn sin((arg,): (Number,)) -> Result<Value, Error> {
+	Ok(arg.sin().into())
+}

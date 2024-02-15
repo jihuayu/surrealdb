@@ -2692,6 +2692,60 @@ async fn function_math_variance() -> Result<(), Error> {
 	Ok(())
 }
 
+#[tokio::test]
+async fn function_math_sin() -> Result<(), Error> {
+	let sql = r#"
+		RETURN math::sin(60);
+		RETURN math::sin(54.3);
+		RETURN math::sin(-33.2);
+	"#;
+	let dbs = new_ds().await?;
+	let ses = Session::owner().with_ns("test").with_db("test");
+	let res = &mut dbs.execute(sql, &ses, None).await?;
+	assert_eq!(res.len(), 3);
+	//
+	let tmp = res.remove(0).result?;
+	let val = Value::from(60_f32.sin());
+	assert_eq!(tmp, val);
+	//
+	let tmp = res.remove(0).result?;
+	let val = Value::from(64.3_f32.sin());
+	assert_eq!(tmp, val);
+	//
+	let tmp = res.remove(0).result?;
+	let val = Value::from(-33.2_f32.sin());
+	assert_eq!(tmp, val);
+	//
+	Ok(())
+}
+
+#[tokio::test]
+async fn function_math_cos() -> Result<(), Error> {
+	let sql = r#"
+		RETURN math::cos(60);
+		RETURN math::cos(54.3);
+		RETURN math::cos(-33.2);
+	"#;
+	let dbs = new_ds().await?;
+	let ses = Session::owner().with_ns("test").with_db("test");
+	let res = &mut dbs.execute(sql, &ses, None).await?;
+	assert_eq!(res.len(), 3);
+	//
+	let tmp = res.remove(0).result?;
+	let val = Value::from(60_f32.cos());
+	assert_eq!(tmp, val);
+	//
+	let tmp = res.remove(0).result?;
+	let val = Value::from(64.3_f32.cos());
+	assert_eq!(tmp, val);
+	//
+	let tmp = res.remove(0).result?;
+	let val = Value::from(-33.2_f32.cos());
+	assert_eq!(tmp, val);
+	//
+	Ok(())
+}
+
 // --------------------------------------------------
 // meta
 // --------------------------------------------------
