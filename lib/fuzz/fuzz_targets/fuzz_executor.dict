@@ -236,6 +236,8 @@
 "math::round("
 "math::sqrt("
 "math::sum("
+"math::sin("
+"math::cos("
 "meta"
 "meta::"
 "meta::id("

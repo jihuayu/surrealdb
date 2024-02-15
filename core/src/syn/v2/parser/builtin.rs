@@ -188,6 +188,9 @@ pub(crate) static PATHS: phf::Map<UniCase<&'static str>, PathKind> = phf_map! {
 		UniCase::ascii("math::top") => PathKind::Function,
 		UniCase::ascii("math::trimean") => PathKind::Function,
 		UniCase::ascii("math::variance") => PathKind::Function,
+		UniCase::ascii("math::sin") => PathKind::Function,
+		UniCase::ascii("math::cos") => PathKind::Function,
+
 		//
 		UniCase::ascii("meta::id") => PathKind::Function,
 		UniCase::ascii("meta::table") => PathKind::Function,

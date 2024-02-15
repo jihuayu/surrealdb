@@ -344,6 +344,14 @@ impl Number {
 		self.to_float().acos().into()
 	}
 
+	pub fn cos(self) -> Self {
+		self.to_float().cos().into()
+	}
+
+	pub fn sin(self) -> Self {
+		self.to_float().sin().into()
+	}
+
 	pub fn ceil(self) -> Self {
 		match self {
 			Number::Int(v) => v.into(),
