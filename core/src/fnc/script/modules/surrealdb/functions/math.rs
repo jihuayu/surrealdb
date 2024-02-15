@@ -29,5 +29,7 @@ impl_module_def!(
 	"sum" => run,
 	"top" => run,
 	"trimean" => run,
-	"variance" => run
+	"variance" => run,
+	"sin" => run,
+	"cos" => run
 );
